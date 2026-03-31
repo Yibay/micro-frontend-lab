@@ -1,4 +1,4 @@
-import { history } from 'umi';
+import { history } from '@umijs/max';
 
 function getTitle(pathname: string) {
   if (pathname.startsWith('/vue')) return 'Vue 子应用';
@@ -8,7 +8,6 @@ function getTitle(pathname: string) {
 
 export default function SubAppPage() {
   const pathname = history.location.pathname;
-
   return (
     <div style={{ padding: 16, fontFamily: 'Arial, sans-serif' }}>
       <div style={{ marginBottom: 12 }}>

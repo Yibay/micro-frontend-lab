@@ -1,4 +1,4 @@
-import { history } from 'umi';
+import { history } from '@umijs/max';
 
 function getTitle(pathname: string) {
   if (pathname.startsWith('/vue')) return 'Vue 子应用';

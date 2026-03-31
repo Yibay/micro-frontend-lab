@@ -1,4 +1,4 @@
-import { Link } from 'umi';
+import { Link } from '@umijs/max';
 
 const cardStyle = {
   border: '1px solid #ddd',

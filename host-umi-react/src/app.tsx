@@ -1,28 +1,16 @@
-import { registerMicroApps, start } from 'qiankun';
+// 运行时配置
 
-registerMicroApps([
-  {
-    name: 'sub-vue-vite',
-    entry: '//localhost:7101',
-    container: '#subappvue-container',
-    activeRule: '/vue'
-  },
-  {
-    name: 'sub-vanilla',
-    entry: '//localhost:7102',
-    container: '#subappvanilla-container',
-    activeRule: '/vanilla'
-  }
-]);
-
-let started = false;
-
-export function render(oldRender: () => void) {
-  if (!started) {
-    start({
-      sandbox: { strictStyleIsolation: false }
-    });
-    started = true;
-  }
-  oldRender();
+// 全局初始化状态，可以在这里获取用户信息
+export async function getInitialState() {
+  return {
+    name: 'Admin',
+    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+  };
 }
+
+// 可以在这里通过 qiankun 参数向子应用传递数据
+export const useQiankunStateForSlave = () => {
+  return {
+    globalToken: 'your-token-here',
+  };
+};
