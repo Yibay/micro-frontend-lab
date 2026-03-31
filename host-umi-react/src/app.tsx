@@ -4,13 +4,13 @@ registerMicroApps([
   {
     name: 'sub-vue-vite',
     entry: '//localhost:7101',
-    container: '#subapp-container',
+    container: '#subappvue-container',
     activeRule: '/vue'
   },
   {
     name: 'sub-vanilla',
     entry: '//localhost:7102',
-    container: '#subapp-container',
+    container: '#subappvanilla-container',
     activeRule: '/vanilla'
   }
 ]);

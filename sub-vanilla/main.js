@@ -1,3 +1,5 @@
+import './public-path';
+
 function createTemplate() {
   return `
     <div style="font-family: Arial, sans-serif; border:1px solid #52c41a; border-radius:8px; padding:16px; background:#f6ffed;">

@@ -1,3 +1,4 @@
+import './public-path' // ✅ 必须第一行
 import { createApp } from 'vue';
 import App from './App.vue';
 

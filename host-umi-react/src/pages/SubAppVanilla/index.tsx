@@ -22,7 +22,7 @@ export default function SubAppPage() {
       </div>
       <h2>{getTitle(pathname)}</h2>
       <div
-        id="subapp-container"
+        id="subappvanilla-container"
         style={{
           border: '1px dashed #999',
           minHeight: 380,
