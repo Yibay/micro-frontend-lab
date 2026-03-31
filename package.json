@@ -1,0 +1,17 @@
+{
+  "name": "umi-qiankun-demo-workspace",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=24.14.1 <25.0.0",
+    "pnpm": ">=10.0.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
+  "scripts": {
+    "install:all": "pnpm install -r",
+    "dev:host": "pnpm --filter host-umi-react dev",
+    "dev:vue": "pnpm --filter sub-vue-vite dev",
+    "dev:vanilla": "pnpm --filter sub-vanilla dev"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "sub-vanilla",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "vite --port 7102",
+    "build": "vite build",
+    "preview": "vite preview --port 7102"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
