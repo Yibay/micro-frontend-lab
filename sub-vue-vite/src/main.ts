@@ -4,37 +4,15 @@ import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helpe
 import App from './App.vue';
 
 let app: ReturnType<typeof createApp> | null = null;
-let mountPoint: Element | null = null;
-
-function resolveMountPoint(props: Record<string, any> = {}) {
-  const container = props.container as ParentNode | undefined;
-  if (container) {
-    let root = container.querySelector('#app');
-    if (!root && container instanceof Element) {
-      root = document.createElement('div');
-      root.id = 'app';
-      container.appendChild(root);
-    }
-    if (root) {
-      return root;
-    }
-  }
-
-  const standaloneRoot = document.querySelector('#app');
-  if (!standaloneRoot) {
-    throw new Error('[sub-vue-vite] mount point #app not found');
-  }
-  return standaloneRoot;
-}
 
 function render(props: Record<string, any> = {}) {
-  mountPoint = resolveMountPoint(props);
-  if (app) {
-    app.unmount();
-  }
+  const { container } = props;
+  const mountPoint = container
+    ? container.querySelector('#app')
+    : document.querySelector('#app');
 
   app = createApp(App);
-  app.mount(mountPoint);
+  app.mount(mountPoint as Element);
 }
 
 renderWithQiankun({
@@ -51,10 +29,6 @@ renderWithQiankun({
       app.unmount();
       app = null;
     }
-    if (mountPoint) {
-      mountPoint.innerHTML = '';
-    }
-    mountPoint = null;
   },
   update() {},
 });

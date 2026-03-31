@@ -1,4 +1,5 @@
 import './public-path';
+import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helper';
 
 function createTemplate() {
   return `
@@ -30,25 +31,27 @@ function render(props = {}) {
   bindEvents(container);
 }
 
-export async function bootstrap() {
-  console.log('[sub-vanilla] bootstrap');
-}
+renderWithQiankun({
+  bootstrap() {
+    console.log('[sub-vanilla] bootstrap');
+  },
+  mount(props) {
+    console.log('[sub-vanilla] mount', props);
+    render(props);
+  },
+  unmount(props) {
+    console.log('[sub-vanilla] unmount', props.container);
+    const container = props.container
+        ? props.container.querySelector('#app')
+        : document.querySelector('#app');
+    if (container) {
+      container.innerHTML = '';
+    }
+  },
+  update() {},
+});
 
-export async function mount(props) {
-  console.log('[sub-vanilla] mount', props);
-  render(props);
-}
-
-export async function unmount(props) {
-  const container = props.container
-    ? props.container.querySelector('#app')
-    : document.querySelector('#app');
-  if (container) {
-    container.innerHTML = '';
-  }
-  console.log('[sub-vanilla] unmount');
-}
-
-if (!window.__POWERED_BY_QIANKUN__) {
+if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
+  console.log('[sub-vanilla] standalone mode');
   render();
 }

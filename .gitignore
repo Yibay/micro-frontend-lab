@@ -1,7 +1,13 @@
 # dependencies
 node_modules
+
 # umi caches
 .umi/
 .umi-production/
+
 # build outputs
 dist/
+
+# IDE
+.idea/
+*.iml
