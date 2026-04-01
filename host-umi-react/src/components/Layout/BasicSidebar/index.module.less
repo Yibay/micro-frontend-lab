@@ -1,0 +1,29 @@
+.sidebar {
+  width: 200px;
+  padding: 2px 0;
+}
+
+.link {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    color: #1890ff;
+  }
+  &.active {
+    color: #1890ff;
+    background: #e6f7ff;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #1890ff;
+    }
+  }
+}

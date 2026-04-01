@@ -7,9 +7,10 @@ export default defineConfig({
   model: {},
   initialState: {},
   request: {},
-  
-  // 2. 开启布局（自动生成头部和侧边栏）
-  layout: {},
+  // 2. 路径别名配置
+  alias: {
+    '@': './src',
+  },
   // 3. 微前端主应用配置
   qiankun: {
     master: {
