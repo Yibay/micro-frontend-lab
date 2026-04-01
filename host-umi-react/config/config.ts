@@ -9,10 +9,7 @@ export default defineConfig({
   request: {},
   
   // 2. 开启布局（自动生成头部和侧边栏）
-  layout: {
-    title: '微前端管理平台',
-    locale: true, // 建议开启，防止部分插件报国际化错
-  },
+  layout: {},
   // 3. 微前端主应用配置
   qiankun: {
     master: {

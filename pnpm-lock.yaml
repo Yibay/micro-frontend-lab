@@ -13,6 +13,9 @@ importers:
       '@umijs/max':
         specifier: ^4.3.10
         version: 4.6.38(@babel/core@7.29.0)(@types/node@25.5.0)(@types/react@18.3.28)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(lightningcss@1.22.1)(prettier@3.8.1)(rc-field-form@1.38.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(resolve-url-loader@5.0.0)(rollup@3.30.0)(sass@1.54.0)(styled-jsx@5.1.7(@babel/core@7.29.0)(react@18.3.1))(terser@5.46.1)(type-fest@0.20.2)(typescript@6.0.2)(webpack@5.105.4)
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       qiankun:
         specifier: ^2.10.16
         version: 2.10.16
@@ -7988,7 +7991,7 @@ snapshots:
       '@types/history': 4.7.11
       '@types/react': 18.3.28
       '@types/react-router': 5.1.20
-      redux: 3.7.2
+      redux: 4.2.1
 
   '@types/react-router@5.1.20':
     dependencies:

@@ -1,22 +1,17 @@
+import React from 'react';
 import { Link } from '@umijs/max';
+import styles from './index.module.less';
 
-const cardStyle = {
-  border: '1px solid #ddd',
-  borderRadius: 8,
-  padding: 16,
-  marginTop: 12
-};
-
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   return (
-    <div style={{ padding: 24, fontFamily: 'Arial, sans-serif' }}>
+    <div className={styles.homeContainer}>
       <h1>Umi4 + qiankun 微前端 Demo</h1>
       <p>主应用：React（Umi4）</p>
-      <div style={cardStyle}>
+      <div className={styles.card}>
         <h3>子应用 1：Vue + Vite</h3>
         <Link to="/vue">进入 /vue</Link>
       </div>
-      <div style={cardStyle}>
+      <div className={styles.card}>
         <h3>子应用 2：原生 JS + HTML</h3>
         <Link to="/vanilla">进入 /vanilla</Link>
       </div>
