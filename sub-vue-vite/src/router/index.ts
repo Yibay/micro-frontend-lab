@@ -18,7 +18,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/Contact.vue')
   }
 ];
-
 const router = createRouter({
   history: createWebHistory(config.basePath),
   routes

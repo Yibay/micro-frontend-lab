@@ -23,6 +23,12 @@ export default () => {
       <NavLink to="/umi/Table" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
         umi子应用-Table
       </NavLink>
+      <NavLink to="/react/" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
+        React Vite子应用-首页
+      </NavLink>
+      <NavLink to="/react/about" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
+        React Vite子应用-关于
+      </NavLink>
       <NavLink to="/vanilla" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
         原生子应用
       </NavLink>

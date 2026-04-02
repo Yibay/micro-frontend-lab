@@ -61,5 +61,10 @@ export default defineConfig({
       path: '/umi/*',
       microApp: 'sub-umi-react',
     },
+    {
+      name: 'React Vite子应用',
+      path: '/react/*',
+      component: '@/pages/ReactViteWujie',
+    },
   ],
 });
