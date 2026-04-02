@@ -3,7 +3,7 @@ import config from '../config';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: () => import('../views/Home.vue')
   },

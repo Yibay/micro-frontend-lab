@@ -8,8 +8,14 @@ export default () => {
       <NavLink to="/home" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
         首页
       </NavLink>
-      <NavLink to="/vue" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
+      <NavLink to="/vue/home" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
         Vue子应用
+      </NavLink>
+      <NavLink to="/vue/about" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
+        Vue子应用-关于我们
+      </NavLink>
+      <NavLink to="/vue/contact" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
+        Vue子应用-联系我们
       </NavLink>
       <NavLink to="/vanilla" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
         原生子应用
