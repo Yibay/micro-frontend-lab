@@ -16,25 +16,6 @@ export default function GlobalLayout() {
     return <Outlet />;
   }
 
-  // 首页 → 头部A + 侧边栏A
-  if (path === '/home' || path.startsWith('/vue') || path.startsWith('/vanilla')) {
-    return (
-      <Layout className={styles.layout}>
-        <Header className={styles.header}>
-          <BasicHeader />
-        </Header>
-        <Layout className={styles.contentLayout}> 
-          <Sider className={styles.sidebar} theme="light">
-            <BasicSidebar />
-          </Sider>
-          <Content className={styles.content}>
-            <Outlet />
-          </Content>
-        </Layout>
-      </Layout>
-    );
-  }
-
   // 用户页 → 头部B + 侧边栏B
   if (path === '/user') {
     return (
@@ -55,6 +36,19 @@ export default function GlobalLayout() {
   }
 
   // 默认
-  return <Outlet />;
-
+  return (
+    <Layout className={styles.layout}>
+      <Header className={styles.header}>
+        <BasicHeader />
+      </Header>
+      <Layout className={styles.contentLayout}> 
+        <Sider className={styles.sidebar} theme="light">
+          <BasicSidebar />
+        </Sider>
+        <Content className={styles.content}>
+          <Outlet />
+        </Content>
+      </Layout>
+    </Layout>
+  );
 }

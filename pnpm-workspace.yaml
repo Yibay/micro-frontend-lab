@@ -2,3 +2,4 @@ packages:
   - host-umi-react
   - sub-vue-vite
   - sub-vanilla
+  - sub-umi-react

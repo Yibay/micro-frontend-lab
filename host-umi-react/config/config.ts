@@ -23,6 +23,10 @@ export default defineConfig({
           name: 'sub-vanilla',
           entry: '//localhost:7102',
         },
+        {
+          name: 'sub-umi-react',
+          entry: '//localhost:8001',
+        },
       ],
     },
   },
@@ -51,6 +55,11 @@ export default defineConfig({
       name: '原生子应用',
       path: '/vanilla/*',
       microApp: 'sub-vanilla',
+    },
+    {
+      name: 'React子应用',
+      path: '/umi/*',
+      microApp: 'sub-umi-react',
     },
   ],
 });

@@ -12,6 +12,7 @@
     "install:all": "pnpm install -r",
     "dev:host": "pnpm --filter host-umi-react dev",
     "dev:vue": "pnpm --filter sub-vue-vite dev",
-    "dev:vanilla": "pnpm --filter sub-vanilla dev"
+    "dev:vanilla": "pnpm --filter sub-vanilla dev",
+    "dev:react": "pnpm --filter sub-umi-react dev"
   }
 }
