@@ -73,8 +73,10 @@ pnpm dev
 
 - 主应用: `http://localhost:8000`
 - 主应用内整合访问（qiankun）:
-  - Vue 子应用: `http://localhost:8000/vue`
+  - Vue 子应用: `http://localhost:8000/vue/home`
+  - Umi 子应用: `http://localhost:8000/umi/home`
   - 原生子应用: `http://localhost:8000/vanilla`
 - 子应用独立访问:
-  - Vue 子应用: `http://localhost:7101`
+  - Vue 子应用: `http://localhost:7101/vue/home`
+  - Umi 子应用: `http://localhost:8001/sub-umi-react/Home`
   - 原生子应用: `http://localhost:7102`
