@@ -5,9 +5,6 @@ import styles from './index.module.less';
 export default () => {
   return (
     <div className={styles.sidebar}>
-      <NavLink to="/home" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}>
-        首页
-      </NavLink>
       <NavLink to="/vue/home" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
         Vue子应用
       </NavLink>

@@ -28,16 +28,11 @@ export default defineConfig({
   },
   // 4. 路由配置
   routes: [
+    // 重定向老路由到新路由
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/vue/home',
     },
-    {
-      name: '首页',
-      path: '/home',
-      component: './Home', // 对应 src/pages/Home
-    },
-    // 重定向老路由到新路由
     {
       path: '/about',
       redirect: '/vue/about',
@@ -46,6 +41,7 @@ export default defineConfig({
       path: '/contact',
       redirect: '/vue/contact',
     },
+    // 配置 子应用路由
     {
       name: 'Vue子应用',
       path: '/vue/*',
