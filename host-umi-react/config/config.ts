@@ -37,6 +37,15 @@ export default defineConfig({
       path: '/home',
       component: './Home', // 对应 src/pages/Home
     },
+    // 重定向老路由到新路由
+    {
+      path: '/about',
+      redirect: '/vue/about',
+    },
+    {
+      path: '/contact',
+      redirect: '/vue/contact',
+    },
     {
       name: 'Vue子应用',
       path: '/vue/*',

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import qiankun from 'vite-plugin-qiankun'
+import qiankun from 'vite-plugin-qiankun';
+import config from './src/config';
 
 export default defineConfig({
   plugins: [
@@ -10,6 +11,7 @@ export default defineConfig({
       useDevMode: true
     })
   ],
+  base: config.basePath,
   server: {
     port: 7101,
     cors: true,

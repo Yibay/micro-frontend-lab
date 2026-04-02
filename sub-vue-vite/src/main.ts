@@ -1,7 +1,10 @@
 import './public-path' // ✅ 必须第一行
 import { createApp } from 'vue';
 import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helper';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css';
 import App from './App.vue';
+import router from './router';
 
 let app: ReturnType<typeof createApp> | null = null;
 
@@ -12,6 +15,8 @@ function render(props: Record<string, any> = {}) {
     : document.querySelector('#app');
 
   app = createApp(App);
+  app.use(ElementPlus);
+  app.use(router);
   app.mount(mountPoint as Element);
 }
 
