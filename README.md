@@ -1,4 +1,4 @@
-## Umi4 + qiankun 微前端 Demo
+## Umi4 + qiankun + wujie 微前端 Demo
 
 这个 Demo 包含 5 个应用：
 

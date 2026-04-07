@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  host-umi-react:
+    build:
+      context: .
+      dockerfile: host-umi-react/Dockerfile
+    container_name: host-umi-react
+    ports:
+      - "8000:80"
+    networks:
+      - micro-frontend-network
+    restart: unless-stopped
+
+  sub-umi-react:
+    build:
+      context: .
+      dockerfile: sub-umi-react/Dockerfile
+    container_name: sub-umi-react
+    ports:
+      - "8001:80"
+    networks:
+      - micro-frontend-network
+    restart: unless-stopped
+
+  sub-react-vite:
+    build:
+      context: .
+      dockerfile: sub-react-vite/Dockerfile
+    container_name: sub-react-vite
+    ports:
+      - "7103:80"
+    networks:
+      - micro-frontend-network
+    restart: unless-stopped
+
+  sub-vanilla:
+    build:
+      context: .
+      dockerfile: sub-vanilla/Dockerfile
+    container_name: sub-vanilla
+    ports:
+      - "7102:80"
+    networks:
+      - micro-frontend-network
+    restart: unless-stopped
+
+  sub-vue-vite:
+    build:
+      context: .
+      dockerfile: sub-vue-vite/Dockerfile
+    container_name: sub-vue-vite
+    ports:
+      - "7101:80"
+    networks:
+      - micro-frontend-network
+    restart: unless-stopped
+
+networks:
+  micro-frontend-network:
+    driver: bridge
