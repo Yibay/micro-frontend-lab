@@ -5,11 +5,11 @@ import config from '../config'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/react/home',
     element: <Home />
   },
   {
-    path: '/about',
+    path: '/react/about',
     element: <About />
   }
 ], {

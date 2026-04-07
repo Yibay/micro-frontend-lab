@@ -11,3 +11,4 @@ dist/
 # IDE
 .idea/
 *.iml
+.vscode/

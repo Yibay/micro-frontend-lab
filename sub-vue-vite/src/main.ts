@@ -1,4 +1,3 @@
-import './public-path' // ✅ 必须第一行
 import { createApp } from 'vue';
 import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helper';
 import ElementPlus from 'element-plus';

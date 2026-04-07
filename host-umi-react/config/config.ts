@@ -58,7 +58,7 @@ export default defineConfig({
     },
     {
       name: 'React子应用',
-      path: '/umi/*',
+      path: '/sub-umi-react/*',
       microApp: 'sub-umi-react',
     },
     {

@@ -3,3 +3,4 @@ packages:
   - sub-vue-vite
   - sub-vanilla
   - sub-umi-react
+  - sub-react-vite

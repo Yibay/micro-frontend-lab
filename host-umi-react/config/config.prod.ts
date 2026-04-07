@@ -11,11 +11,15 @@ export default defineConfig({
       apps: [
         {
           name: 'sub-vue-vite',
-          entry: '//your-production-domain.com/sub-vue-vite',
+          entry: '//sub-vue-vite.example.com',
         },
         {
           name: 'sub-vanilla',
-          entry: '//your-production-domain.com/sub-vanilla',
+          entry: '//sub-vanilla.example.com',
+        },
+        {
+          name: 'sub-umi-react',
+          entry: '//sub-umi-react.example.com',
         },
       ],
     },

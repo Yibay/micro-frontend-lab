@@ -1,4 +1,3 @@
-import './public-path';
 import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helper';
 
 function createTemplate() {

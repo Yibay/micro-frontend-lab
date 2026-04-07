@@ -2,12 +2,18 @@ FROM node:24-alpine AS builder
 
 WORKDIR /app
 
+# 设置 npm 镜像
+RUN npm config set registry https://registry.npmmirror.com
+
 # 复制根目录的 pnpm-lock.yaml 和 pnpm-workspace.yaml
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 # 复制子项目的文件
 COPY sub-react-vite/ ./
 
 RUN npm install -g pnpm@10.33.0
+
+# 设置 pnpm 镜像
+RUN pnpm config set registry https://registry.npmmirror.com
 
 # 在子项目目录中安装依赖
 RUN pnpm install
