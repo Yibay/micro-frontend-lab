@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import { qiankunWindow, renderWithQiankun } from 'vite-plugin-qiankun/dist/helper';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
@@ -14,8 +15,10 @@ function render(props: Record<string, any> = {}) {
     : document.querySelector('#app');
 
   app = createApp(App);
+  const pinia = createPinia();
   app.use(ElementPlus);
   app.use(router);
+  app.use(pinia);
   app.mount(mountPoint as Element);
 }
 
