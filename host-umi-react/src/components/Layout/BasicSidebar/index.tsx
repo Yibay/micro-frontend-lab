@@ -14,6 +14,12 @@ export default () => {
       <NavLink to="/vue/contact" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
         Vue子应用-联系我们
       </NavLink>
+      <NavLink to="/vue/list" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
+        Vue子应用-列表页
+      </NavLink>
+      <NavLink to="/vue/form" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
+        Vue子应用-表单页
+      </NavLink>
       <NavLink to="/sub-umi-react/Home" className={({ isActive }) => classNames(styles.link, { [styles.active]: isActive })}> 
         umi子应用-Home
       </NavLink>

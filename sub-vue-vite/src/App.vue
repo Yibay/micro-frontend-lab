@@ -3,6 +3,7 @@
     <h2>Vue 子应用（Vite）</h2>
     <p>这个应用可以独立运行，也可以被 qiankun 主应用加载。</p>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="/vue/list">列表页</el-menu-item>
       <el-menu-item index="/vue/home">首页</el-menu-item>
       <el-menu-item index="/vue/about">关于我们</el-menu-item>
       <el-menu-item index="/vue/contact">联系我们</el-menu-item>
