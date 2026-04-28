@@ -16,6 +16,10 @@ export default defineConfig({
           name: 'sub-vanilla',
           entry: '//localhost:7102',
         },
+        {
+          name: 'sub-umi-react',
+          entry: '//localhost:8001',
+        },
       ],
     },
   },

@@ -5,11 +5,13 @@ import { useModel } from '@umijs/max';
 import styles from './index.less';
 
 const HomePage: React.FC = () => {
-  const { name } = useModel('global');
+  const { globalState } = useModel('global');
+  const { user } = globalState || {};
+  console.log('globalState---', globalState);;
   return (
     <PageContainer ghost>
       <div className={styles.container}>
-        <Guide name={trim(name)} />
+        <Guide name={trim(user?.name || 'Admin')} />
       </div>
     </PageContainer>
   );

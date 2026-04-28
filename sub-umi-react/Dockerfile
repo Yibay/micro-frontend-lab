@@ -7,6 +7,8 @@ RUN npm config set registry https://registry.npmmirror.com
 
 # 复制根目录的 pnpm-lock.yaml 和 pnpm-workspace.yaml
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+# 复制 packages 目录（共享包）
+COPY packages/ ./packages/
 # 复制子项目的文件
 COPY sub-umi-react/ ./
 
@@ -17,6 +19,9 @@ RUN pnpm config set registry https://registry.npmmirror.com
 
 # 在子项目目录中安装依赖
 RUN pnpm install
+
+# 构建 types 包
+RUN cd packages/types && pnpm build
 
 # 构建子项目
 RUN pnpm build

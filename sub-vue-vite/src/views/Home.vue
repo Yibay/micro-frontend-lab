@@ -28,10 +28,17 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useGlobalStateStore } from '@/store/globalState';
+import { EmitType } from '@shared/types';
 
+const globalStateStore = useGlobalStateStore();
 const dialogVisible = ref(false);
 
 const showDialog = () => {
+  globalStateStore.emit({
+    type: EmitType.login,
+    payload: { action: 'showDialog' }
+  });
   dialogVisible.value = true;
 };
 
