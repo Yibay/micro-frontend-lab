@@ -5,12 +5,14 @@ import { EmitType, DEFAULT_SUBAPP_GLOBAL_STATE } from '@shared/types';
 interface GlobalStateStore {
   // 全局状态
   globalState: GlobalState;
-  // 发送消息的方法
-  emit: ((params: EmitParams) => void) | null;
+  // 内部发送消息的方法（从主应用传入）
+  _emit: ((params: EmitParams) => void) | null;
   // 同步从主应用获取的状态
   syncFromMaster: (updates: any) => void;
   // 发送消息到主应用
   sendMessage: (message: { type: EmitType | string; payload?: any }) => void;
+  // 发送消息到主应用（使用 emit）
+  emit: (message: { type: EmitType | string; payload?: any }) => void;
   // 更新主题
   updateTheme: (theme: string) => void;
   // 更新用户信息
@@ -33,6 +35,17 @@ export const useGlobalStateStore = create<GlobalStateStore>((set, get) => ({
       },
       _emit: updates.emit || state._emit,
     }));
+  },
+  
+  // 发送消息到主应用（sendMessage 别名）
+  sendMessage: (message: { type: EmitType | string; payload?: any }) => {
+    const { _emit } = get();
+    if (_emit) {
+      _emit({
+        ...message,
+        sourceApp: 'sub-react-vite',
+      });
+    }
   },
   
   // 发送消息到主应用

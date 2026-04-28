@@ -9,8 +9,8 @@ RUN npm config set registry https://registry.npmmirror.com
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 # 复制 packages 目录（共享包）
 COPY packages/ ./packages/
-# 复制子项目的文件
-COPY sub-react-vite/ ./
+# 复制子项目的文件到子目录（保持目录结构）
+COPY sub-react-vite/ ./sub-react-vite/
 
 RUN npm install -g pnpm@10.33.0
 
@@ -23,12 +23,13 @@ RUN pnpm install
 # 构建 types 包
 RUN cd packages/types && pnpm build
 
-# 构建子项目
+# 切换到子项目目录并构建
+WORKDIR /app/sub-react-vite
 RUN pnpm build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/sub-react-vite/dist /usr/share/nginx/html
 
 COPY sub-react-vite/nginx.conf /etc/nginx/conf.d/default.conf
 
