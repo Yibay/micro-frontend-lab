@@ -1,4 +1,5 @@
 import { defineConfig } from '@umijs/max';
+import path from 'path';
 
 export default defineConfig({
   npmClient: 'pnpm',
@@ -10,6 +11,7 @@ export default defineConfig({
   // 2. 路径别名配置
   alias: {
     '@': './src',
+    '@shared': path.resolve(__dirname, '../../../packages/types/src'),
   },
   // 3. 微前端主应用配置
   qiankun: {

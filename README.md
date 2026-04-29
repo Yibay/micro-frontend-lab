@@ -35,11 +35,14 @@ corepack enable
 
 ```txt
 .
-├── host-umi-react
-├── sub-vue-vite
-├── sub-vanilla
-├── sub-umi-react
-└── sub-react-vite
+├── apps/
+│   ├── host-umi-react    # 主应用（Umi4 + React + qiankun + wujie）
+│   ├── sub-vue-vite      # 子应用（Vue3 + Vite）
+│   ├── sub-vanilla       # 子应用（原生 JS + HTML + Vite）
+│   ├── sub-umi-react     # 子应用（Umi4 + React）
+│   └── sub-react-vite    # 子应用（React + Vite，通过 wujie 加载）
+└── packages/
+    └── types             # 共享类型定义
 ```
 
 ## 运行方式
@@ -55,35 +58,35 @@ pnpm install
 1. 启动 Vue 子应用
 
 ```bash
-cd sub-vue-vite
+cd apps/sub-vue-vite
 pnpm dev
 ```
 
 2. 启动原生子应用
 
 ```bash
-cd sub-vanilla
+cd apps/sub-vanilla
 pnpm dev
 ```
 
 3. 启动 Umi 子应用
 
 ```bash
-cd sub-umi-react
+cd apps/sub-umi-react
 pnpm dev
 ```
 
 4. 启动 React Vite 子应用
 
 ```bash
-cd sub-react-vite
+cd apps/sub-react-vite
 pnpm dev
 ```
 
 5. 启动 Umi 主应用
 
 ```bash
-cd host-umi-react
+cd apps/host-umi-react
 pnpm dev
 ```
 

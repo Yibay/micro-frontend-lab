@@ -8,24 +8,23 @@ RUN npm config set registry https://registry.npmmirror.com
 # 复制根目录的 pnpm-lock.yaml 和 pnpm-workspace.yaml
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 # 复制子项目的文件
-COPY sub-vanilla/ ./
+COPY apps/sub-vanilla/ ./apps/sub-vanilla/
 
 RUN npm install -g pnpm@10.33.0
 
 # 设置 pnpm 镜像
 RUN pnpm config set registry https://registry.npmmirror.com
 
-# 在子项目目录中安装依赖
-RUN pnpm install
-
 # 构建子项目
+WORKDIR /app/apps/sub-vanilla
+RUN pnpm install
 RUN pnpm build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/apps/sub-vanilla/dist /usr/share/nginx/html
 
-COPY sub-vanilla/nginx.conf /etc/nginx/conf.d/default.conf
+COPY apps/sub-vanilla/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 

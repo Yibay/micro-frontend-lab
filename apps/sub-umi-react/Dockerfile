@@ -10,7 +10,7 @@ COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 # 复制 packages 目录（共享包）
 COPY packages/ ./packages/
 # 复制子项目的文件到子目录（保持目录结构）
-COPY sub-react-vite/ ./sub-react-vite/
+COPY apps/sub-umi-react/ ./apps/sub-umi-react/
 
 RUN npm install -g pnpm@10.33.0
 
@@ -24,14 +24,14 @@ RUN pnpm install
 RUN cd packages/types && pnpm build
 
 # 切换到子项目目录并构建
-WORKDIR /app/sub-react-vite
+WORKDIR /app/apps/sub-umi-react
 RUN pnpm build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/sub-react-vite/dist /usr/share/nginx/html
+COPY --from=builder /app/apps/sub-umi-react/dist /usr/share/nginx/html
 
-COPY sub-react-vite/nginx.conf /etc/nginx/conf.d/default.conf
+COPY apps/sub-umi-react/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 

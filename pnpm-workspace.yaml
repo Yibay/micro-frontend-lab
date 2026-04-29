@@ -1,7 +1,3 @@
 packages:
-  - 'host-umi-react'
-  - 'sub-umi-react'
-  - 'sub-vue-vite'
-  - 'sub-react-vite'
-  - 'sub-vanilla'
+  - 'apps/*'
   - 'packages/*'

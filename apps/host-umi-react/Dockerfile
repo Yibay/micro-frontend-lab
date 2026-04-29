@@ -10,7 +10,7 @@ COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 # 复制 packages 目录（共享包）
 COPY packages/ ./packages/
 # 复制子项目的文件到子目录（保持目录结构）
-COPY host-umi-react/ ./host-umi-react/
+COPY apps/host-umi-react/ ./apps/host-umi-react/
 
 RUN npm install -g pnpm@10.33.0
 
@@ -24,14 +24,14 @@ RUN pnpm install
 RUN cd packages/types && pnpm build
 
 # 切换到子项目目录并构建
-WORKDIR /app/host-umi-react
+WORKDIR /app/apps/host-umi-react
 RUN pnpm build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/host-umi-react/dist /usr/share/nginx/html
+COPY --from=builder /app/apps/host-umi-react/dist /usr/share/nginx/html
 
-COPY host-umi-react/nginx.conf /etc/nginx/conf.d/default.conf
+COPY apps/host-umi-react/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 

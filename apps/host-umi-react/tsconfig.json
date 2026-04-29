@@ -8,7 +8,7 @@
     "paths": {
       "umi": ["./src/.umi/exports"],
       "@/*": ["./src/*"],
-      "@shared/*": ["../packages/types/src/*"]
+      "@shared/*": ["../../packages/types/src/*"]
     },
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true
