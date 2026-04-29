@@ -5,6 +5,9 @@ node_modules
 .umi/
 .umi-production/
 
+# turbo
+.turbo/
+
 # build outputs
 dist/
 

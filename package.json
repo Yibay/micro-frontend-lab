@@ -10,14 +10,22 @@
   },
   "scripts": {
     "install:all": "pnpm install -r",
+    "dev": "turbo dev",
+    "build": "turbo build",
     "dev:host": "pnpm --filter host-umi-react dev",
     "dev:vue": "pnpm --filter sub-vue-vite dev",
     "dev:vanilla": "pnpm --filter sub-vanilla dev",
     "dev:react": "pnpm --filter sub-umi-react dev",
+    "dev:react-vite": "pnpm --filter sub-react-vite dev",
+    "lint": "turbo lint",
+    "clean": "turbo clean && pnpm -r clean",
     "docker:prod": "docker-compose up",
     "docker:prod:build": "docker-compose up --build",
     "docker:prod:down": "docker-compose down",
     "docker:build": "docker-compose build",
     "docker:clean": "docker-compose down -v --rmi all"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.6"
   }
 }
