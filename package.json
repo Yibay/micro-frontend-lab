@@ -17,6 +17,7 @@
     "dev:vanilla": "pnpm --filter sub-vanilla dev",
     "dev:react": "pnpm --filter sub-umi-react dev",
     "dev:react-vite": "pnpm --filter sub-react-vite dev",
+    "dev:backend": "pnpm --filter backend-nest start:dev",
     "lint": "turbo lint",
     "clean": "turbo clean && pnpm -r clean",
     "docker:prod": "docker-compose up",
